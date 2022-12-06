@@ -1,4 +1,4 @@
-class CreateGameSituation < ActiveRecord::Migration[6.1]
+class CreateSituation < ActiveRecord::Migration[6.1]
   def change
     create_table :situations do |t|
         t.string :situation
