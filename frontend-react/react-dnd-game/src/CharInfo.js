@@ -1,11 +1,12 @@
 import React from 'react'
 
-export default function CharInfo({char}) {
+export default function CharInfo({char, health}) {
     return(
 <div>
         <h1>CHARACTER</h1>
         <p>{char.name}</p>
         <p>Age: {char.age}</p>
+        <img src={char.image}/>
         <h1>SKILL STATS</h1>
         <p>Strength: {char.strength}</p>
         <p>Health: {char.health}</p>
