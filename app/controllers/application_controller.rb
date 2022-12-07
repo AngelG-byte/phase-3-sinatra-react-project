@@ -1,28 +1,47 @@
 class ApplicationController < Sinatra::Base
   set :default_content_type, 'application/json'
 
-
-get '/game/:id' do
+  get '/game/:id' do
 char = Character.find(params[:id])
+char.to_json( include: :situations)
+end
+  patch '/game/:id' do
+char = Character.find(params[:id])
+char.update(params)
 char.to_json
 end
-# patch '/game/:id' do
-# char = Character.find(params[:id])
-# # char.update(
-# #   health: params[:health]
-# #   money: params[:money]
-# #   strenght: params[:strenght]
-# #   intelligence: params[:intelligence]
-# #   lick: params[:luck]
-# #   cunningness: params[:cunningness]
-# # has_plot_armor?: params[:has_plot_armor?]
-# # has_invisibility_cloak?: params[:has_invisibility_cloak?]
-# # has_8_ball?: params[:has_8_ball?]
-# # has_money_bag?: params[:has_money_bag?]
-# # has_sword?: params[:has_sword?]
-# # has_perfume?: params[:has_perfume?]
-# # charisma: params[:charisma]
-# )
-# char.to_json
-# end
+  delete '/game/:id' do
+char =  Character.find(params[:id])
+char.destroy
+  end
+
+get '/battle/:id' do
+      char = Character.find(params[:id])
+       char.to_json( include: { char_vs_situations: {include: :situation}})  #( include: { character: { include: :situation } })
+
+   end
+get '/battles/:id' do
+      char = Situation.find(params[:id])
+       char.to_json( include: { char_vs_situations: {include: :character}})  #( include: { character: { include: :situation } })
+
+   end
 end
+
+
+# get '/games/:id' do
+#   game = Game.find(params[:id])
+
+#   # include associated reviews in the JSON response
+#   game.to_json(include: { reviews: { include: :user } })
+# end
+
+# get '/games/:id' do
+#   game = Game.find(params[:id])
+
+#   # include associated reviews in the JSON response
+#   game.to_json(only: [:id, :title, :genre, :price], include: {
+#     reviews: { only: [:comment, :score], include: {
+#       user: { only: [:name] }
+#     } }
+#   })
+# end

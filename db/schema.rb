@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_12_05_161923) do
+ActiveRecord::Schema.define(version: 2022_12_06_141303) do
 
   create_table "char_vs_situations", force: :cascade do |t|
     t.integer "character_id"
@@ -19,6 +19,8 @@ ActiveRecord::Schema.define(version: 2022_12_05_161923) do
 
   create_table "characters", force: :cascade do |t|
     t.string "name"
+    t.string "image"
+    t.string "story"
     t.integer "health"
     t.integer "money"
     t.integer "age"
@@ -26,13 +28,14 @@ ActiveRecord::Schema.define(version: 2022_12_05_161923) do
     t.integer "intelligence"
     t.integer "luck"
     t.integer "cunningness"
-    t.boolean "has_plot_armor?"
-    t.boolean "has_invisibility_cloak?"
-    t.boolean "has_8_ball?"
-    t.boolean "has_money_bag?"
-    t.boolean "has_sword?"
-    t.boolean "has_perfume?"
     t.integer "charisma"
+    t.boolean "has_plot_armor"
+    t.boolean "has_invisibility_cloak"
+    t.boolean "has_8_ball"
+    t.boolean "has_sword"
+    t.boolean "has_perfume"
+    t.boolean "has_raven"
+    t.boolean "has_troll_army"
   end
 
   create_table "situations", force: :cascade do |t|
