@@ -1,12 +1,11 @@
 import React from 'react'
 
-export default function CharInfo({char, health, display}) {
+export default function CharInfo({char, display}) {
     return(
-<div className={display ? "hide" : "show"}>
+<div  className={display ? "hide" : "show"}>
         <h1>CHARACTER</h1>
         <p>{char.name}</p>
-        {/* <p>Age: {char.age}</p> */}
-        {/* <img src={char.image}/> */}
+        <img src={char.image}/>
         <h1>SKILL STATS</h1>
         <p>Strength: {char.strength}</p>
         <p>Health: {char.health}</p>
@@ -21,7 +20,6 @@ export default function CharInfo({char, health, display}) {
         <p>{char.has_perfume ? "Perfume" : " "}</p>
         <p>{char.has_raven ? "Raven " : " "}</p>
         <p>{char.has_troll_army ? "Troll Friends " : " "}</p>
-
 </div>
 
     )

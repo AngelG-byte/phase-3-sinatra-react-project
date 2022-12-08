@@ -15,7 +15,6 @@ function CharCont({ elem, filterChars, changeButtonText }) {
 
   return (
     <>
-      <div id="char-button-section">
         {display && (
           <button
             id="char-buttons"
@@ -25,11 +24,10 @@ function CharCont({ elem, filterChars, changeButtonText }) {
             }}
             value={elem.id}
           >
-             <img src={elem.image}/> 
+             <img src={elem.image}/>
             <p>{elem.name}</p>
           </button>
         )}
-      </div>
       <CharInfo char={elem} display={display} />
     </>
   );
