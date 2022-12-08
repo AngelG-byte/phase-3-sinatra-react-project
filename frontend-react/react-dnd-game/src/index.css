@@ -49,6 +49,16 @@ margin-top: -8px;
 
 }
 
+#char-buttons > p {
+font-family: 'Pirata One', cursive;
+font-size: 24px;
+color: #fff;
+position: absolute;
+top:58%;
+right: 32%;
+left: 32%;
+
+}
 
 .hide{
     display: none;
@@ -58,14 +68,3 @@ margin-top: -8px;
     display: flex;
 }
 
-/* div.container4 {
-    height: 10em;
-    position: relative }
-div.container4 p {
-    margin: 0;
-    background: yellow;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    margin-right: -50%;
-    transform: translate(-50%, -50%) } */

@@ -1,5 +1,9 @@
 class ApplicationController < Sinatra::Base
   set :default_content_type, 'application/json'
+  get '/all' do 
+   char = Character.all
+   char.to_json( include: { char_vs_situations: {include: :situation}})
+  end
 #handle story calls on this to find the situation text
   get '/situation/:id' do
   sit = Situation.find(params[:id])
@@ -10,7 +14,6 @@ get '/intro' do
  message = 'Sleepily, with eyes half closed, you enter the elevator and take it up the second floor, just like every other day for the past 9 weeks. You figure youll grab yourself a little treat from Divine Cafe. Maybe a coffee and an Oatmeal Creme Pie? You head for the elevator and press the lobby button...'
  message.to_json
 end
-
 
 
 #FINDS the 5 characters
@@ -43,6 +46,4 @@ get '/battles/charisma/:id/:sit_id' do
     char = Character.find(params[:id]).char_vs_situations.find_by(situation_id: params[:sit_id]).luck_test
     char.to_json
     end
-
-
 end
