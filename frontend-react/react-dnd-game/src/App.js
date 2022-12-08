@@ -104,11 +104,28 @@ function handleFight(e) {
 }
 return(
     <div>
-    <button onClick={handleFetchChett} className= {charDisplay ? "show" : "hide"}>Chett</button>
-    <button onClick={handleFetchAlina} className= {charDisplay ? "show" : "hide"} >Alina</button>
-    <button onClick={handleFetchMaxim} className= {charDisplay ? "show" : "hide"}>Maxim</button>
-    <button onClick={handleFetchAngel} className={charDisplay ? "show" : "hide"}>Angel</button>
-    <button onClick={handleFetchEmily} className= {charDisplay ? "show" : "hide"}>Emily</button>
+    <section id="char-button-section">
+    <button id="char-buttons" onClick={handleFetchChett} className= {charDisplay ? "show" : "hide"}>
+    <img src="IMAGES/knight.png"/>
+        <p>Chett</p>
+    </button>
+    <button id="char-buttons" onClick={handleFetchAlina} className= {charDisplay ? "show" : "hide"}>
+        <img src="IMAGES/8bitgirlnobg (1).png"/>
+        <p>Alina</p>
+    </button>
+    <button id="char-buttons" onClick={handleFetchMaxim} className= {charDisplay ? "show" : "hide"}>
+    <img src="IMAGES/knight.png"/>
+        <p>Maxim</p>
+        </button>
+    <button id="char-buttons" onClick={handleFetchAngel} className={charDisplay ? "show" : "hide"}>
+        <img src="IMAGES/knight.png"/>
+        <p>Angel</p>
+        </button>
+    <button id="char-buttons" onClick={handleFetchEmily} className= {charDisplay ? "show" : "hide"}>
+        <img src="IMAGES/8bitgirlnobg (1).png"/>
+        <p>Emily</p>
+        </button>
+    </section>
     <CharInfo char = {char}  health={health}/>
 
     {/* <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/71c8d4c1-f1a9-47f1-855c-030b165278fa/dektl6b-3b40000d-d04a-4d92-b767-17b70b19fb22.gif?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzcxYzhkNGMxLWYxYTktNDdmMS04NTVjLTAzMGIxNjUyNzhmYVwvZGVrdGw2Yi0zYjQwMDAwZC1kMDRhLTRkOTItYjc2Ny0xN2I3MGIxOWZiMjIuZ2lmIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.sk9f7WGbHKRhgtFKSY4dVx73H2s9WkXdPzWAdEXgGzI"/> */}
