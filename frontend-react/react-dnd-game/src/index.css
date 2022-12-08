@@ -1,12 +1,15 @@
 
 body{
     font-family: 'Pirata One', cursive;
-    background-image: url('https://pbs.twimg.com/media/CL1M7qDWwAA2bRS.png');
+    background-image: url('https://thumbs.dreamstime.com/b/pixel-art-dithering-background-three-colors-gradient-color-vector-142596401.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
-section#char-button-section {
+#char-button-section {
 display: flex;
 flex-direction: row;
+flex-wrap: wrap;
 padding: 20px;
 display: flex;
 align-items: center;
@@ -16,8 +19,8 @@ justify-content: center;
 
 #char-buttons{
 /* padding: 80px; */
-height: 160px;
-width: 300px;
+height: 20vh;
+width: 28vh;
 margin: 20px;
 box-shadow: 5px 5px 10px 2px rgba(0,0,0,.8);
 border-radius: 5px;
@@ -67,4 +70,3 @@ left: 32%;
 .show{
     display: flex;
 }
-
