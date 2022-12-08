@@ -15,7 +15,6 @@ function CharCont({ elem, filterChars, changeButtonText }) {
 
   return (
     <>
-      <CharInfo char={elem} display={display} />
       <div id="char-button-section">
         {display && (
           <button
@@ -31,6 +30,7 @@ function CharCont({ elem, filterChars, changeButtonText }) {
           </button>
         )}
       </div>
+      <CharInfo char={elem} display={display} />
     </>
   );
 }
