@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function CharInfo({char, health}) {
     return(
-<div>
+<div className="char-info-div">
         <h1>CHARACTER</h1>
         <p>{char.name}</p>
         <p>Age: {char.age}</p>
