@@ -51,6 +51,16 @@ margin-top: -8px;
 
 }
 
+#char-buttons > p {
+font-family: 'Pirata One', cursive;
+font-size: 24px;
+color: #fff;
+position: absolute;
+top:58%;
+right: 32%;
+left: 32%;
+
+}
 
 .hide{
     display: none;
