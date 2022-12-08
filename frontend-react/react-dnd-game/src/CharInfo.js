@@ -21,6 +21,5 @@ export default function CharInfo({char, display}) {
         <p>{char.has_raven ? "Raven " : " "}</p>
         <p>{char.has_troll_army ? "Troll Friends " : " "}</p>
 </div>
-
     )
 }
