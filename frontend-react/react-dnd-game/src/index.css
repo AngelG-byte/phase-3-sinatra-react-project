@@ -120,3 +120,12 @@ left: 32%;
     height: 10vh;
     border: 1px black solid;
 }
+
+div#next-btn{
+    display:flex;
+    flex-direction: row-reverse;
+    }
+    .next-btn{
+        padding: 10px 20px;
+        margin-top: 10px;
+    }

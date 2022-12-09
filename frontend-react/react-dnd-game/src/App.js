@@ -4,17 +4,18 @@ import Intro from "./Intro"
 import Story from "./Story"
 import CharCont from "./CharCont"
 
+
 function App() {
 // char gets character information
 const [char, setChar] = useState([])
 // intro displays introduction text
-const [intro, setIntro] = useState(true)
+const [intro, setIntro] = useState('')
 // page displays the next page
 const [pageId, setPageId] = useState(0)
 // setId reperesents situation id
 const [sitId, setSitId]= useState(0)
 // situation will display the current story portion
-const [situation, setSituation] = useState([])
+const [situation, setSituation] = useState({})
 // outcome displays outcome of the situation
 const [outcome, setOutcome] = useState('')
 // represents health of character
@@ -30,6 +31,11 @@ useEffect(() => {
     .then(charData => {
         setChar(charData)
     })
+
+    setSitId(sitId + 1)
+    fetch(`http://localhost:9292/situation/1`)
+    .then(r => r.json())
+    .then(data => setSituation(data))
 }, [])
 
 function handleStory(){
@@ -37,7 +43,7 @@ function handleStory(){
     fetch(`http://localhost:9292/situation/${sitId + 1}`)
     .then(r => r.json())
     .then(data => setSituation(data))
-    console.log(situation)
+    // console.log(situation)
 }
 
 function handleScreen(){
@@ -83,8 +89,7 @@ return(
     </div>
     {/* <CharInfo char = {char}  health={health}/> */}
 
-     {/* <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/71c8d4c1-f1a9-47f1-855c-030b165278fa/dektl6b-3b40000d-d04a-4d92-b767-17b70b19fb22.gif?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzcxYzhkNGMxLWYxYTktNDdmMS04NTVjLTAzMGIxNjUyNzhmYVwvZGVrdGw2Yi0zYjQwMDAwZC1kMDRhLTRkOTItYjc2Ny0xN2I3MGIxOWZiMjIuZ2lmIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.sk9f7WGbHKRhgtFKSY4dVx73H2s9WkXdPzWAdEXgGzI"/> */}
-    <Intro intro={intro} />
+    <Intro situation={situation} setSituation={setSituation} />
     <Story outcome={outcome} situation={situation}/>
 
     <button className="fight-btn" onClick = {(e) => handleFight(e)} value="strength">{charItem.has_sword ? "Use Sword" : "Use Strength"}</button>
@@ -92,7 +97,7 @@ return(
     <button className="fight-btn" onClick = {(e) => handleFight(e)} value="charisma">{charItem.has_perfume ? "Use Perfume" : "Use Charisma"}</button>
     <button className="fight-btn" onClick = {(e) => handleFight(e)} value="luck">{charItem.has_invisibility_cloak ? "Use Invisibility Cloak" : "Use Luck"}</button>
     <button className="fight-btn" onClick = {(e) => handleFight(e)} value="cunningness">{charItem.has_raven ? "Use Raven" : "Use Cunningness"}</button>
-    <div>
+    <div id="next-btn">
         <button className="next-btn" onClick={() => {handleScreen(); handleStory();}}>Next</button>
     </div>
 </div>
