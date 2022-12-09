@@ -28,7 +28,9 @@ function CharCont({ elem, filterChars, changeButtonText }) {
             <p>{elem.name}</p>
           </button>
         )}
+        <div className="stats">
       <CharInfo char={elem} display={display} />
+        </div>
     </>
   );
 }

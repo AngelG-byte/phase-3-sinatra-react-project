@@ -2,17 +2,22 @@
 
 *{
     font-family: 'VT323', monospace;
+    margin: 0;
+    padding: 0;
 }
 
 body{
     font-family: 'Pirata One', cursive;
-    background-image: url('https://thumbs.dreamstime.com/b/pixel-art-dithering-background-three-colors-gradient-color-vector-142596401.jpg');
+    background-color: grey;
+    /* background-image: url('https://thumbs.dreamstime.com/b/pixel-art-dithering-background-three-colors-gradient-color-vector-142596401.jpg'); */
     /* background-image: url('https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/71c8d4c1-f1a9-47f1-855c-030b165278fa/dektl6b-3b40000d-d04a-4d92-b767-17b70b19fb22.gif?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzcxYzhkNGMxLWYxYTktNDdmMS04NTVjLTAzMGIxNjUyNzhmYVwvZGVrdGw2Yi0zYjQwMDAwZC1kMDRhLTRkOTItYjc2Ny0xN2I3MGIxOWZiMjIuZ2lmIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.sk9f7WGbHKRhgtFKSY4dVx73H2s9WkXdPzWAdEXgGzI'); */
     background-size: cover;
     background-repeat: no-repeat;
+    overflow-x: hidden;
 }
 
 #char-button-section {
+height: 60vh;
 display: flex;
 flex-direction: row;
 flex-wrap: wrap;
@@ -20,7 +25,7 @@ padding: 20px;
 display: flex;
 align-items: center;
 justify-content: center;
-
+border: 1px black solid;
 }
 
 #char-buttons{
@@ -47,10 +52,6 @@ transform:scale(1.1);
 font-family: 'Pirata One', cursive;
 font-size: 24px;
 color: white;
-position: absolute;
-top: 58%;
-right: 32%;
-left: 32%;
 }
 
 #char-buttons > img {
@@ -74,13 +75,48 @@ position: absolute;
 top:58%;
 right: 32%;
 left: 32%;
-
 }
 
 .hide{
     display: none;
 }
 
+.stat-text{
+    font-size: 5vh;
+}
+
 .show{
+    height: fit-content;
     display: flex;
+    flex-direction: column;
+}
+
+.char-image{
+    width: 90vh;
+    height: 70vh;
+    position: relative;
+}
+
+.char-stats{
+    position: relative;
+    top: -57vh;
+    left: -25vh
+}
+
+.text-cont{
+    margin: auto;
+    min-height: 10px;;
+    height: fit-content;
+    font-size: 1.5rem;
+    border: 1px black solid;
+    width: 50%;
+    height: 70px;
+    background-color: black;
+    color: #fff;
+}
+
+.btn-cont{
+    width: 100%;
+    height: 10vh;
+    border: 1px black solid;
 }
