@@ -1,5 +1,5 @@
 import {useState, useEffect} from "react"
-import CharInfo from "./CharInfo"
+// import CharInfo from "./CharInfo"
 import Intro from "./Intro"
 import Story from "./Story"
 import CharCont from "./CharCont"
@@ -54,9 +54,9 @@ function filterChars(id){
 
 const character = char.map(elem => {
     return(
-        <section>
-            <CharCont elem={elem} key={elem.id} filterChars={filterChars} changeButtonText={changeButtonText}/>
-        </section>
+ 
+            <CharCont elem={elem} key={elem.id} filterChars={filterChars} changeButtonText={changeButtonText} char = {char} />
+       
     )
 })
 
@@ -78,21 +78,25 @@ function changeButtonText(elem){
 return(
     <div>
     
-    <div id="char-button-section">
-    {character}
-    </div>
-    <CharInfo char = {char}  health={health}/>
+   
+    {/* <CharInfo char = {char}  health={health}/> */}
 
      {/* <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/71c8d4c1-f1a9-47f1-855c-030b165278fa/dektl6b-3b40000d-d04a-4d92-b767-17b70b19fb22.gif?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzcxYzhkNGMxLWYxYTktNDdmMS04NTVjLTAzMGIxNjUyNzhmYVwvZGVrdGw2Yi0zYjQwMDAwZC1kMDRhLTRkOTItYjc2Ny0xN2I3MGIxOWZiMjIuZ2lmIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.sk9f7WGbHKRhgtFKSY4dVx73H2s9WkXdPzWAdEXgGzI"/> */}
+     <div id="char-button-section"> 
+     
+    {character}
+    </div>
     <Intro intro={intro} />
+   
     <Story outcome={outcome} situation={situation}/>
-
+    <div className="fight-btn-div">
     <button className="fight-btn" onClick = {(e) => handleFight(e)} value="strength">{charItem.has_sword ? "Use Sword" : "Use Strength"}</button>
     <button className="fight-btn" onClick = {(e) => handleFight(e)} value="intelligence">{charItem.has_8_ball ? "Use 8 Ball" : "Use Inteligence"}</button>
     <button className="fight-btn" onClick = {(e) => handleFight(e)} value="charisma">{charItem.has_perfume ? "Use Perfume" : "Use Charisma"}</button>
     <button className="fight-btn" onClick = {(e) => handleFight(e)} value="luck">{charItem.has_invisibility_cloak ? "Use Invisibility Cloak" : "Use Luck"}</button>
     <button className="fight-btn" onClick = {(e) => handleFight(e)} value="cunningness">{charItem.has_raven ? "Use Raven" : "Use Cunningness"}</button>
-    <div>
+    </div>
+    <div id="next-btn">
         <button class="next-btn" onClick={() => {handleScreen(); handleStory();}}>Next</button>
     </div>
 </div>

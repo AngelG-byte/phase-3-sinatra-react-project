@@ -2,6 +2,8 @@
 
 *{
     font-family: 'VT323', monospace;
+    margin:0;
+    padding:0;
 }
 
 body{
@@ -33,9 +35,12 @@ border-radius: 5px;
 position:relative;
 background-color: black;
 }
+.char-btns-p{
+    margin-top: 30px;
+}
 
 #char-buttons:hover{
-background-color: #386600;
+background-color: #B749E5;
 transition: transform .1s, background-color 0.5s ;
 transform:scale(1.1);
 }
@@ -58,12 +63,16 @@ width: 200px;
 margin-top: -8px;
 
 }
-
+div.fight-btn-div{
+display:flex;
+justify-content: space-evenly;
+}
 .fight-btn{
 width:18vh;
 height:7vh;
 background-color: transparent;
 border-color: rgb(211, 138, 2);
+transform:scale(1.1);
 }
 
 #char-buttons > p {
@@ -77,10 +86,55 @@ left: 32%;
 
 }
 
+.char-stats{
+position:relative;
+top:-57vh;
+left: -25vh;
+font-size: 24px;
+
+}
+
+.char-image{
+width: 90vh;
+height: 70vh;
+position:relative;
+top: 60vh;
+left: 10vw;
+}
+
+div#next-btn{
+display:flex;
+flex-direction: row-reverse;
+}
+
+.next-btn{
+    padding: 10px 20px;
+    margin-top: 10px;
+}
+
 .hide{
     display: none;
 }
 
 .show{
     display: flex;
+    height: fit-content;
+    flex-direction: column;
+}
+
+div#intro{
+    max-width:50%;
+    padding: 40px;
+    background-color: black;
+    display:flex;
+    
+}
+div#intro > p {
+  display: flex;
+
+  color: white;
+  width: 50%;
+  text-align: center;
+  font-size: 26px;
+
 }
