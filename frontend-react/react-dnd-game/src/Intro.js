@@ -1,10 +1,12 @@
 import React from 'react';
 
 export default function Intro({intro}){
-
+    console.log(intro)
     return(
-        <div id="intro" className= {intro ? "show" : "hide"}>
-            <p>{intro}</p>
+        <div className={intro ? "show" : "hide"}>
+            <div className="text-cont">
+                <p className="intro-para">{intro}</p>
+            </div>
         </div>
     )
 }

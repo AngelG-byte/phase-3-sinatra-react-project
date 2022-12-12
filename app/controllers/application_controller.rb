@@ -10,10 +10,10 @@ class ApplicationController < Sinatra::Base
   sit.to_json
 end
 #loads the intro story
-get '/intro' do
- message = 'Sleepily, with eyes half closed, you enter the elevator and take it up the second floor, just like every other day for the past 9 weeks. You figure youll grab yourself a little treat from Divine Cafe. Maybe a coffee and an Oatmeal Creme Pie? You head for the elevator and press the lobby button...'
- message.to_json
-end
+# get '/intro' do
+#  message = 'Sleepily, with eyes half closed, you enter the elevator and take it up the second floor, just like every other day for the past 9 weeks. You figure youll grab yourself a little treat from Divine Cafe. Maybe a coffee and an Oatmeal Creme Pie? You head for the elevator and press the lobby button...'
+#  message.to_json
+# end
 
 
 #FINDS the 5 characters
