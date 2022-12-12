@@ -15,6 +15,19 @@ get '/intro' do
  message.to_json
 end
 
+get "/full_story/:situation_id" do
+   char = Character.all
+   # may have to marshal
+   c_json = char.as_json( include: { char_vs_situations: {include: :situation}})
+   message = 'Sleepily, with eyes half closed, you enter the elevator and take it up the second floor, just like every other day for the past 9 weeks. You figure youll grab yourself a little treat from Divine Cafe. Maybe a coffee and an Oatmeal Creme Pie? You head for the elevator and press the lobby button...'
+   sit = Situation.find(params[:situation_id])
+   return {
+    char: c_json,
+    message: message.to_json,
+    sit: sit
+   }.to_json
+end
+
 
 #FINDS the 5 characters
 get '/battle/:id' do

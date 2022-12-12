@@ -1,8 +1,6 @@
 import React, { useState } from "react";
-import CharInfo from "./CharInfo";
 
-function CharCont({ elem, filterChars, changeButtonText }) {
-  const [display, setDisplay] = useState(true);
+function CharCont({ elem, filterChars, changeButtonText, setCharId, display, setDisplay }) {
 
   function handleDisplay() {
     setDisplay(false);
@@ -17,10 +15,13 @@ function CharCont({ elem, filterChars, changeButtonText }) {
     <>
         {display && (
           <button
+            className={display ? "show" : "hide" }
             id="char-buttons"
             onClick={() => {
               handleDisplay();
+              setDisplay(false)
               getCharData(elem);
+              setCharId(elem.id)
             }}
             value={elem.id}
           >
@@ -28,9 +29,6 @@ function CharCont({ elem, filterChars, changeButtonText }) {
             <p>{elem.name}</p>
           </button>
         )}
-        <div className="stats">
-      <CharInfo char={elem} display={display} />
-        </div>
     </>
   );
 }
