@@ -10,7 +10,7 @@ Once you cloned it, cd into this repository, and in your terminal run the follow
 ```
 rake s
 ```
-Then cd into frontend-react folder, and from there cd into react-dnd-game.
+Then in new terminal cd into frontend-react folder, and from there cd into react-dnd-game.
 From here run:
 ```
 npm install
