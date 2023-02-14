@@ -1,4 +1,4 @@
-# Phase 3 Project Guidelines
+Flatiron RPG
 
 ## Learning Goals
 
